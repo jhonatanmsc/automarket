@@ -2,7 +2,8 @@ CREATE TABLE IF NOT EXISTS USERS (
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username varchar(100),
     email varchar(100) unique,
-    password varchar(255) default NULL
+    password varchar(255) default NULL,
+    salesman BOOLEAN DEFAULT false
     
 );
 
@@ -142,3 +143,14 @@ INSERT INTO `users` (`username`, `email`, `salesman`) VALUES
    ("Bokwo", "Bokwo@mail.com", 0),
    ("Vewe", "Vewe@mail.com", 1),
    ("Uthsuen", "Uthsuen@mail.com", 1);
+
+INSERT INTO `item_sale` (`id`, `car_id`, `salesman_id`, `costumer_id`, `price`, `created_at`) VALUES 
+ (1, 63, 9, 5, 60000.00, '2020-06-23 09:19:56'),
+ (2, 68, 10, 6, 50000.00, '2020-06-23 09:20:51'),
+ (3, 85, 9, 10, 70000.00, '2020-06-23 09:21:04'),
+ (4, 97, 10, 4, 60000.00, '2020-06-23 09:21:46'),
+ (5, 50, 9, 6, 15000.00, '2020-06-23 09:22:18'),
+ (6, 29, 10, 2, 40000.00, '2020-06-23 09:22:30'),
+ (7, 5, 9, 3, 20000.00, '2020-06-23 09:23:09'),
+ (8, 92, 10, 7, 80000.00, '2020-06-23 09:24:35'),
+ (9, 52, 9, 8, 10000.00, '2020-06-23 09:25:19');
